@@ -16,7 +16,7 @@
             document.getElementById("formulaire").reset();
         } else {
             message_formulaire_false.innerHTML = "Vous avez mal informé les informations dans le formulaire !";
-            event.preventDefault(); // Empêche la soumission du formulaire
+            event.preventDefault();
         }
     }
 
@@ -37,30 +37,30 @@
     }
     </script>
 
-    <form action="donnee.php" id="formulaire" method="post" enctype="multipart/form-data">
+    <form action="donnee.php" id="formulaire" method="POST" enctype="multipart/form-data">
         <div id="form-group">
             <label for="nom">Veuillez saisir votre nom </label>
-            <input type="text" name="nom" id="nom">
+            <input type="text" name="nom" id="nom" value="Berne">
         </div>
         <br>
         <div id="form-group">
             <label for="prenom">Veuillez saisir votre prénom </label>
-            <input type="text" name="prenom" id="prenom">
+            <input type="text" name="prenom" id="prenom" value="Paul">
         </div>
         <br>
         <div id="form-group">
             <label for="mail">Veuillez saisir votre Adresse mail</label>
-            <input type="text" name="mail" id="mail">
+            <input type="email" name="mail" id="mail" value="paulberne1309@gmail.com">
         </div>
         <br>
         <div id="form-group">
             <label for="mdp">Veuillez saisir votre mot de passe</label>
-            <input type="text" name="mdp" id="mdp">
+            <input type="password" name="mdp" id="mdp" value="mdp">
         </div>
         <br>
         <div id="form-group">
             <label for="confirmmdp">Veuillez confirmer votre mot de passe</label>
-            <input type="text" name="comfirmmdp" id="confirmmdp" oninput="passwordsame()">
+            <input type="password" name="comfirmmdp" id="confirmmdp" oninput="passwordsame()" value="mdp">
             <p id="passwordmessage"></p>
         </div>
         <div id="form-group">
@@ -73,6 +73,35 @@
             </select>
         </div>
         <br>
+
+        <div id="form-group">
+            <input type="file">
+        </div>
+
+        <br>
+        <div id="form-group">
+            <span>Championnat :</span>
+            <input type="radio" id="ligue1" name="championnat" value="ligue1">
+            <label for="ligue1">Ligue 1</label>
+            <input type="radio" id="ligue2" name="championnat" value="ligue2">
+            <label for="ligue2">Ligue 2</label>
+        </div>
+        <br>
+        <div id="form-group">
+            <label for="club_pref">Club préféré :</label>
+            <select name="club_pref" id="club_pref">
+                <option value="Paris SG">Paris SG</option>
+                <option value="Marseille">Marseille</option>
+                <option value="Lyon">Monaco</option>
+                <option value="Monaco">Monaco</option>
+            </select>
+        </div>
+        <br>
+        <div id="form_group">
+            <label for="news_club">Veuillez choisir les news de quel club :</label>
+            <input type="checkbox">
+            <label for=""></label>
+        </div>
         <div>
             <input type="submit" value="Validez" onclick="resetform(event)">
             <p id="message_non_valide"></p>
