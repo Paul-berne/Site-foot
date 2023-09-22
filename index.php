@@ -100,7 +100,7 @@
         <div id="form_group">
             <label for="news_club">Veuillez choisir les news de quel club :</label>
             <input type="checkbox">
-            <label for=""></label>
+            <label for="">test</label>
         </div>
         <div>
             <input type="submit" value="Validez" onclick="resetform(event)">
