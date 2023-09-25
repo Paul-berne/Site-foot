@@ -74,10 +74,20 @@
             </div>
             <br>
             <div id="form_group">
-                <label for="news_club">Veuillez choisir les news de quel club :</label>
-                <input type="checkbox">
-                <label for="">test</label>
+                <label>Veuillez choisir les news de quel club :</label>
+                <input type="checkbox" id="select_all" onchange="selectAllClubs()">
+                <label for="select_all">Tout sélectionner</label><br>
+
+                <input type="checkbox" id="paris_sg" name="club_news" value="Paris SG">
+                <label for="paris_sg">Paris SG</label>
+
+                <input type="checkbox" id="lyon" name="club_news" value="Lyon">
+                <label for="lyon">Lyon</label>
+
+                <input type="checkbox" id="marseille" name="club_news" value="Marseille">
+                <label for="marseille">Marseille</label>
             </div>
+
             <div>
                 <input type="submit" value="Validez" onclick="resetform(event)">
                 <p id="message_non_valide"></p>
