@@ -1,6 +1,102 @@
-form{
-    margin-left: 20%;
-    margin-right: 30%;
-    margin-top: 5%;
-    background-color: aqua;
+/* Réinitialisation des styles par défaut du navigateur */
+body, h1, h2, p, ul, li, form, input, select, label {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style du corps de la page */
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Style du formulaire */
+#formulaire {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style des groupes de formulaire */
+#form-group {
+    margin-bottom: 15px;
+}
+
+/* Style des labels */
+label {
+    font-weight: bold;
+}
+
+/* Style des champs de texte */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Style du message de confirmation du mot de passe */
+#passwordmessage {
+    color: green;
+    font-weight: bold;
+}
+
+/* Style des boutons radio et cases à cocher */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Style du bouton Valider */
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Style du message d'erreur */
+#message_non_valide {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Style du champ de téléchargement de fichier */
+input[type="file"] {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 5px;
+    width: 100%;
+}
+
+/* Style de la sélection de sexe */
+#sexe {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Style de la sélection de club préféré */
+#club_pref {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Style de la liste de choix des news de club */
+#form_group input[type="checkbox"] {
+    margin-right: 5px;
 }
