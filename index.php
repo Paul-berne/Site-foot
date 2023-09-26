@@ -15,12 +15,8 @@
     $dsn ='pgsql:host=localhost;dbname=site-foot;password=Paulberne13?;user=postgres;port=5432';
     $cnx = new PDO($dsn);
     $i=0;
-    $res = $cnx->query("SELECT * FROM club"); //ici $sql1 = "select * from produit"
-    while($i < $res->rowCount()){
-        $ligne = $res->fetch();
-        echo 'enregistrement '. $i .' :'. $ligne['nom_club'] . ' '. $ligne[1] .'<br />';
-        $i++;
-        }
+    $res = $cnx->query("SELECT * FROM club");  
+    
     ?>
     <div class="container">
         <h1>Formulaire</h1>
