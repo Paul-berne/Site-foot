@@ -12,10 +12,6 @@
 
 <body>
     <?php
-    $dsn ='pgsql:host=localhost;dbname=site-foot;password=Paulberne13?;user=postgres;port=5432';
-    $cnx = new PDO($dsn);
-    $i=0;
-    $res = $cnx->query("SELECT * FROM club");  
     
     ?>
     <div class="container">
