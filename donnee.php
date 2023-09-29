@@ -19,7 +19,6 @@
     echo "Voici votre mot de passe : " .$mdp. "<br>";
     $dsn ='pgsql:host=localhost;dbname=site-foot;password=Paulberne13?;user=postgres;port=5432';
     $cnx = new PDO($dsn);
-    $i=0;
     $res = $cnx->query("SELECT * FROM club");  
     foreach ($res as $row) {
         echo "<li>identifiant du club : " . $row['id_club'] . "</li>";

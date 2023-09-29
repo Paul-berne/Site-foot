@@ -11,9 +11,7 @@
 </head>
 
 <body>
-    <?php
-    
-    ?>
+
     <div class="container">
         <h1>Formulaire</h1>
         <form action="donnee.php" id="formulaire" method="POST" enctype="multipart/form-data">
@@ -66,30 +64,48 @@
                 <label for="ligue2">Ligue 2</label>
             </div>
             <br>
-            <div id="form-group">
-                <label for="club_pref">Club préféré :</label>
-                <select name="club_pref" id="club_pref">
-                    <option value="Paris SG">Paris SG</option>
-                    <option value="Marseille">Marseille</option>
-                    <option value="Lyon">Monaco</option>
-                    <option value="Monaco">Monaco</option>
-                </select>
-            </div>
+            <?php
+                $dsn = 'pgsql:host=localhost;dbname=site-foot;password=Paulberne13?;user=postgres;port=5432';
+                $cnx = new PDO($dsn);
+                $res = $cnx->query("SELECT * FROM club");
+
+                echo '<div id="form-group">';
+                echo '<label for="club_pref">Club préféré :</label>';
+                echo '<select name="club_pref" id="club_pref">';
+
+                foreach ($res as $row) {
+                    echo '<option value="' . $row['id_club'] . '">' . $row['nom_club'] . '</option>';
+                }
+
+                echo '</select>';
+                echo '</div>';
+                ?>
             <br>
-            <div id="form_group">
+            <div class="form_group">
                 <label>Veuillez choisir les news de quel club :</label>
-                <input type="checkbox" id="select_all" onchange="selectAllClubs()">
+                <input type="checkbox" class="select-all" onchange="selectAllClubs()">
                 <label for="select_all">Tout sélectionner</label><br>
 
-                <input type="checkbox" id="paris_sg" name="club_news" value="Paris SG">
-                <label for="paris_sg">Paris SG</label>
-
-                <input type="checkbox" id="lyon" name="club_news" value="Lyon">
-                <label for="lyon">Lyon</label>
-
-                <input type="checkbox" id="marseille" name="club_news" value="Marseille">
-                <label for="marseille">Marseille</label>
+                <?php
+                $dsn = 'pgsql:host=localhost;dbname=site-foot;password=Paulberne13?;user=postgres;port=5432';
+                $cnx = new PDO($dsn);
+                $res = $cnx->query("SELECT * FROM club");
+                $i = 0;
+                foreach ($res as $row) {
+                    $i = $i + 1;
+                    $clubId = $row['id_club'];
+                    $clubNom = $row['nom_club'];
+                    echo '<input type="checkbox" id="' . $clubNom . '" name="club_news[]" value="' . $clubNom . '">';
+                    echo '<label for="' . $clubNom . '">' . $clubNom . '</label>';
+                    if ($i > 3){
+                        echo"<br>";
+                        $i = 0;
+                    }
+                }
+                ?>
             </div>
+
+
 
             <div>
                 <input type="submit" value="Validez" onclick="resetform(event)">

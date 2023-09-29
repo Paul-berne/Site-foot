@@ -26,10 +26,10 @@ function passwordsame() {
 
 // Fonction pour cocher ou décocher toutes les cases individuelles
 function selectAllClubs() {
-    var selectAllCheckbox = document.getElementById("select_all");
-    var clubCheckboxes = document.querySelectorAll('input[name="club_news"]');
-    
+    var checkboxes = document.querySelectorAll('.select-all');
+    var clubCheckboxes = document.querySelectorAll('input[name="club_news[]"]');
+
     for (var i = 0; i < clubCheckboxes.length; i++) {
-        clubCheckboxes[i].checked = selectAllCheckbox.checked;
+        clubCheckboxes[i].checked = checkboxes[0].checked;
     }
 }
