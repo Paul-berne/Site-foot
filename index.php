@@ -43,8 +43,9 @@
             <div id="form-group">
                 <label for="sexe">Veuillez sélectionner votre sexe :</label>
                 <select id="sexe" name="sexe">
-                    <option value="male">Homme</option>
                     <option value="female">Femme</option>
+                    <option value="male">Homme</option>
+
                     <option value="non_binary">Non-binaire</option>
                     <option value="other">Autre..</option>
                 </select>
@@ -52,7 +53,8 @@
             <br>
 
             <div id="form-group">
-                <input type="file">
+                <label for="fichier">Veuillez sélectionner un fichier :</label>
+                <input type="file" name="fichier" id="fichier">
             </div>
 
             <br>

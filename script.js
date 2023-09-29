@@ -12,17 +12,21 @@ function passwordsame() {
     let mdp = document.getElementById("mdp").value;
     let confirmmdp = document.getElementById("confirmmdp").value;
     let message = document.getElementById("passwordmessage");
-    if (mdp != "" || confirmmdp != "") {
-        if (mdp == confirmmdp) {
+    
+    if (mdp.trim() !== "" && confirmmdp.trim() !== "") {
+        if (mdp === confirmmdp) {
             message.innerHTML = "correct";
             return true;
         } else {
             message.innerHTML = "Mot de passe différent";
             return false;
         }
+    } else {
+        message.innerHTML = ""; // Efface le message s'il n'y a pas de saisie
+        return false;
     }
-    return false;
 }
+
 
 // Fonction pour cocher ou décocher toutes les cases individuelles
 function selectAllClubs() {
