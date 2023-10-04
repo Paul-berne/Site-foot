@@ -43,9 +43,8 @@
             <div id="form-group">
                 <label for="sexe">Veuillez sélectionner votre sexe :</label>
                 <select id="sexe" name="sexe">
-                    <option value="female">Femme</option>
                     <option value="male">Homme</option>
-
+                    <option value="female">Femme</option>
                     <option value="non_binary">Non-binaire</option>
                     <option value="other">Autre..</option>
                 </select>
