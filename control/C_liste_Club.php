@@ -1,14 +1,10 @@
 <?php
-include_once('club.php');
-include_once('GestionClub.php');
+include_once('../model/club.php');
+include_once('../model/GestionClub.php');
 $dsn ='pgsql:host=localhost;dbname=site-foot;password=Paulberne13?;user=postgres;port=5432';
 $cnx = new PDO($dsn);
 $gc = new GestionClub($cnx);
+$t = [];
 $t=$gc->getLIsteClub();
-
- for ($i = 1; $i <= 10; $i++){
-    echo $t[$i]->getNomClub();
-    
- }
-
+include("../view/V_listeclub.php");
 ?>

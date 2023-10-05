@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des clubs</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_liste_club.css">
 </head>
 
 <body>
@@ -19,7 +19,12 @@
         </thead>
         <tbody>
             <?php
-            include("../control/C_Club.php");
+            foreach ($t as $club) {
+                echo '<tr>';
+                echo '<td>' . $club->getNomClub() . '</td>';
+                echo '<td>' . $club->getLigueClub() . '</td>';
+                echo '</tr>';
+            }
             ?>
         </tbody>
     </table>
