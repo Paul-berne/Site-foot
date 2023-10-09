@@ -7,7 +7,7 @@
     <title>Formulaire</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-    <link rel="stylesheet" href="style_inscription.css">
+    <link rel="stylesheet" href="../css/style_inscription.css">
 
 </head>
 
