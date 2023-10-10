@@ -13,7 +13,8 @@
     <?php
     include_once("router.php");
     $router = new Router(); 
-    $router->addRoute("/inscription", "control/C_inscription.php"); 
+    $router->addRoute("/inscription", "control/C_Inscription.php"); 
+    $router->addRoute("/listedeclub", "control/C_Liste_Club.php");
 
     $currentURL = $_SERVER['REQUEST_URI'];
 
