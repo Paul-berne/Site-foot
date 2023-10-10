@@ -15,13 +15,13 @@
     $router = new Router(); 
     $router->addRoute("/inscription", "control/C_Inscription.php"); 
     $router->addRoute("/listedeclub", "control/C_Liste_Club.php");
-    $router->addRoute("/Acceuil", "/index.php");
+    $router->addRoute("/Acceuil", "control/C_Acceuil.php");
+    $router->addRoute("/", "control/C_Acceuil.php");
 
     $currentURL = $_SERVER['REQUEST_URI'];
 
     $router->execute($currentURL);
     ?>
-
 </body>
 
 </html>
