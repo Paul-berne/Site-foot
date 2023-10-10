@@ -14,7 +14,7 @@
 <body>
 
     <?php
-include("../view/V_incription.php")
+include_once("../view/V_inscription.php");
 ?>
 </body>
 

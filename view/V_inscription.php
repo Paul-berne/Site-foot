@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire</title>
     <link rel="stylesheet" href="style_inscription.css">
-    <script src="script.js"></script>
 
 </head>
 
