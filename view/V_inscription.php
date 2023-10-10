@@ -13,7 +13,7 @@
 
     <div class="container">
         <h1>Formulaire</h1>
-        <form action="donnee.php" id="formulaire" method="POST" enctype="multipart/form-data">
+        <form action="C_inscription.php" id="formulaire" method="POST" enctype="multipart/form-data">
             <div id="form-group">
                 <label for="nom">Veuillez saisir votre nom </label>
                 <input type="text" name="nom" id="nom" value="Berne">
