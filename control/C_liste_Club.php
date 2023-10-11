@@ -10,6 +10,7 @@
 
 <body>
     <?php
+        include_once("header.php");
 include_once('./model/club.php');
 include_once('./model/GestionClub.php');
 $dsn ='pgsql:host=localhost;dbname=site-foot;password=Paulberne13?;user=postgres;port=5432';

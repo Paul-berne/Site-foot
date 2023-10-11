@@ -18,6 +18,8 @@
         <p>Vous pouvez retrouver ici toute l'actualité sur la ligue 1.</p>
         <p>Explorez notre site pour trouver des informations passionnantes sur les matchs, les classements. Restez
             connectés avec le monde du football en ligue !</p>
+        <a href="/inscription" class="btn">S'inscrire</a>
+        <a href="/listedeclub" class="btn">Liste des clubs</a>
     </div>
 </body>
 

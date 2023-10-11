@@ -1,0 +1,15 @@
+#headerli {
+    font-family: Poppins, sans-serif;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    background-color: aliceblue;
+    font-size: 1.1em;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 5px 1px 15px black;
+    z-index: 999;
+}
