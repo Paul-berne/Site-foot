@@ -14,8 +14,14 @@
 <body>
 
     <?php
+    include("./model/User.php");
+    include("./model/GestionUser.php");
     include_once("header.php");
-include_once('./view/V_inscription.php');?>
+    include_once('./view/V_inscription.php');
+    
+    //if isset ($nom = $_POST["nom"]);
+    
+?>
 </body>
 
 </html>
