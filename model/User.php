@@ -1,17 +1,19 @@
 <?php
 class User {
+    private int $id_club;
     private string $nom;
     private string $prenom;
     private string $mail;
-    private $mdp;
+    private string $mdp;
     private string $sexe;
 
-    public function __construct(string $nom, string $prenom, string $mail, $mdp, string $sexe) {
+    public function __construct(int $id_club, string $nom, string $prenom, string $mail, $mdp, string $sexe) {
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->mail = $mail;
         $this->mdp = $mdp;
         $this->sexe = $sexe;
+        $this->id_club = $id_club;
     }
 
     public function getNom(): string {
@@ -52,6 +54,14 @@ class User {
 
     public function setSexe(string $sexe) {
         $this->sexe = $sexe;
+    }
+
+    public function setId_club(int $id_club){
+        $this->id_club = $id_club;
+    }
+
+    public function getId_club(): int{
+        return $this->id_club;
     }
 }
 ?>

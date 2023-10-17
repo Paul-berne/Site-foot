@@ -30,7 +30,7 @@ body {
 }
 
 /* Style des groupes de formulaire */
-#form-group {
+.form-group {
     margin-bottom: 15px;
 }
 
