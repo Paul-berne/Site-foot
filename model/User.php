@@ -7,7 +7,7 @@ class User {
     private string $mdp;
     private string $sexe;
 
-    public function __construct(int $id_club, string $nom, string $prenom, string $mail, $mdp, string $sexe) {
+    public function __construct(int $id_club, string $nom, string $prenom, string $mail, string $mdp, string $sexe) {
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->mail = $mail;

@@ -37,14 +37,14 @@
                 <p id="passwordmessage"></p>
             </div>
             <div class="form-group">
-                <label for="sexe">Veuillez sélectionner votre sexe :</label>
-                <select id="sexe" name="sexe">
-                    <option value="male">Homme</option>
-                    <option value="female">Femme</option>
-                    <option value="non_binary">Non-binaire</option>
-                    <option value="other">Autre..</option>
-                </select>
+                <span>Sexe :</span>
+                <input type="radio" id="homme" name="sexe" value="homme">
+                <label for="homme">Homme</label>
+                <input type="radio" id="femme" name="sexe" value="femme">
+                <label for="femme">Femme</label>
             </div>
+
+
             <br>
             <div class="form-group">
                 <label for="image">Sélectionnez une image :</label>
