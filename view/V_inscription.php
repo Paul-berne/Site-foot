@@ -38,10 +38,12 @@
             </div>
             <div class="form-group">
                 <span>Sexe :</span>
-                <input type="radio" id="homme" name="sexe" value="homme">
                 <label for="homme">Homme</label>
-                <input type="radio" id="femme" name="sexe" value="femme">
-                <label for="femme">Femme</label>
+                <input type="radio" id="homme" name="sexe" value="homme">
+                <label for="femme">femme</label>
+
+                <input type="radio" id="femme" name="sexe" value="femme" checked>
+
             </div>
 
 
@@ -54,7 +56,7 @@
             <br>
             <div class="form-group">
                 <span>Championnat :</span>
-                <input type="radio" id="ligue1" name="championnat" value="ligue1">
+                <input type="radio" id="ligue1" name="championnat" value="ligue1" checked>
                 <label for="ligue1">Ligue 1</label>
                 <input type="radio" id="ligue2" name="championnat" value="ligue2">
                 <label for="ligue2">Ligue 2</label>
@@ -70,22 +72,22 @@
                 echo '<select name="club_pref" id="club_pref">';
 
                 foreach ($res as $row) {
-                    echo '<option value="' . $row['id_club'] . '">' . $row['nom_club'] . '</option>';
+if ($row['id_club'] == 6) {
+    echo '<option value="' . $row['id_club'] . '" selected>' . $row['nom_club'] . '</option>';
+}else{
+    echo '<option value="' . $row['id_club'] . '" >' . $row['nom_club'] . '</option>';
+    
+}
                 }
 
                 echo '</select>';
                 echo '</div>';
-            ?>
-            <br>
-            <div class="form-group">
-                <label>Veuillez choisir les news de quel club :</label>
-                <input type="checkbox" class="select-all" onchange="selectAllClubs()">
-                <label for="select_all">Tout sélectionner</label><br>
-
-                <?php
-                $dsn = 'pgsql:host=localhost;dbname=site-foot;password=Paulberne13?;user=postgres;port=5432';
-                $cnx = new PDO($dsn);
-                $res = $cnx->query("SELECT * FROM club");
+                echo '<br>';
+                echo '<div class="form-group">';
+                echo '<label>Veuillez choisir les news de quel club :</label>';
+                echo '<input type="checkbox" class="select-all" onchange="selectAllClubs()">';
+                echo '<label for="select_all">Tout sélectionner</label><br>';
+                
                 $i = 0;
                 foreach ($res as $row) {
                     $i = $i + 1;
@@ -99,12 +101,12 @@
                     }
                 }
                 ?>
-            </div>
-            <div>
-                <input type="submit" value="Validez" onclick="resetform(event)">
-                <p id="message_non_valide"></p>
-            </div>
-        </form>
+    </div>
+    <div>
+        <input type="submit" value="Validez">
+        <p id="message_non_valide"></p>
+    </div>
+    </form>
     </div>
 </body>
 

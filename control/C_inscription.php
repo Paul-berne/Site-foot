@@ -19,21 +19,23 @@
     include("./model/Club.php");
     include("./model/GestionClub.php");
     include_once("header.php");
-    include_once('./view/V_inscription.php');
-    
-    var_dump($_POST);
+
+
+
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dsn = 'pgsql:host=localhost;dbname=site-foot;password=Paulberne13?;user=postgres;port=5432';
         $cnx = new PDO($dsn);
-    
+
+        var_dump($_POST);
         $nom = $_POST["nom"];
         $prenom = $_POST["prenom"];
         $mail = $_POST["mail"];
         $mdp = $_POST["mdp"];
-        $sexe = $_POST["sexe"]; 
+        $sexe = $_POST["sexe"];
         $club_pref = $_POST["club_pref"];
-        
+        $ligue = $_POST["championnat"];
+
         $club_id;
         $gc = new GestionClub($cnx);
         $t = $gc->getLIsteClub();
@@ -44,14 +46,16 @@
                 break;
             }
         }
-    
+
         $theUser = new User($club_pref, $nom, $prenom, $mail, $mdp, $sexe);
         $gestionUser = new GestionUser($cnx);
         $gestionUser->sendToDB($theUser);
+    } else {
+        include_once('./view/V_inscription.php');
     }
-    
-    
-?>
+
+
+    ?>
 </body>
 
 </html>

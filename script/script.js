@@ -1,8 +1,10 @@
-function resetform(event) {
+function checked_form(event) {
     let message_formulaire_false = document.getElementById("message_non_valide");
     if (passwordsame() == true) {
-        document.getElementById("formulaire").reset();
-    } else {
+        var f = document.getElementById("formulaire");
+        f.submit(); 
+       
+    }else{
         message_formulaire_false.innerHTML = "Vous avez mal informé les informations dans le formulaire !";
         event.preventDefault();
     }
