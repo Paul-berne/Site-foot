@@ -104,6 +104,7 @@ input[type="file"] {
 }
 
 /* Style de la liste de choix des news de club */
-#form_group input[type="checkbox"] {
+.form-group input[type="checkbox"] {
     margin-right: 5px;
 }
+

@@ -13,28 +13,30 @@
         <form action="/inscription" id="formulaire" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="nom">Veuillez saisir votre nom</label>
-                <input type="text" name="nom" id="nom" value="Berne">
+                <input type="text" name="nom" id="nom" value="Berne" required>
             </div>
             <br>
             <div class="form-group">
                 <label for="prenom">Veuillez saisir votre prénom</label>
-                <input type="text" name="prenom" id="prenom" value="Paul">
+                <input type="text" name="prenom" id="prenom" value="Paul" required>
             </div>
             <br>
             <div class="form-group">
                 <label for="mail">Veuillez saisir votre Adresse mail</label>
-                <input type="email" name="mail" id="mail" value="paulberne1309@gmail.com">
+                <input type="email" name="mail" id="mail" value="paulberne1309@gmail.com" required>
             </div>
             <br>
             <div class="form-group">
                 <label for="mdp">Veuillez saisir votre mot de passe</label>
-                <input type="password" name="mdp" id="mdp" value="mdp">
+                <input type="password" name="mdp" id="mdp" value="Paulberne13?" oninput="validate()" required>
+                <span id="message_conforme"></span>
             </div>
             <br>
             <div class="form-group">
                 <label for="confirmmdp">Veuillez confirmer votre mot de passe</label>
-                <input type="password" name="confirmmdp" id="confirmmdp" oninput="passwordsame()" value="mdp">
-                <p id="passwordmessage"></p>
+                <input type="password" name="confirmmdp" id="confirmmdp" value="Paulberne13?" oninput="same_password()"
+                    required>
+                <p id="passwordmessage"></p><span id="message_invalide"></span>
             </div>
             <div class="form-group">
                 <span>Sexe :</span>
@@ -72,22 +74,24 @@
                 echo '<select name="club_pref" id="club_pref">';
 
                 foreach ($res as $row) {
-if ($row['id_club'] == 6) {
-    echo '<option value="' . $row['id_club'] . '" selected>' . $row['nom_club'] . '</option>';
-}else{
-    echo '<option value="' . $row['id_club'] . '" >' . $row['nom_club'] . '</option>';
-    
-}
+                    if ($row['id_club'] == 6) {
+                        echo '<option value="' . $row['id_club'] . '" selected>' . $row['nom_club'] . '</option>';
+                    } else {
+                        echo '<option value="' . $row['id_club'] . '" >' . $row['nom_club'] . '</option>';
+                    }
                 }
 
                 echo '</select>';
                 echo '</div>';
                 echo '<br>';
+
                 echo '<div class="form-group">';
                 echo '<label>Veuillez choisir les news de quel club :</label>';
                 echo '<input type="checkbox" class="select-all" onchange="selectAllClubs()">';
                 echo '<label for="select_all">Tout sélectionner</label><br>';
-                
+
+                $res->execute(); 
+
                 $i = 0;
                 foreach ($res as $row) {
                     $i = $i + 1;
@@ -100,10 +104,12 @@ if ($row['id_club'] == 6) {
                         $i = 0;
                     }
                 }
+                echo '</div>';
                 ?>
+
     </div>
     <div>
-        <input type="submit" value="Validez">
+        <input type="submit" value="Validez" onclick="checked_form(event)">
         <p id="message_non_valide"></p>
     </div>
     </form>

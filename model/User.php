@@ -6,14 +6,16 @@ class User {
     private string $mail;
     private string $mdp;
     private string $sexe;
+    private string $image;
 
-    public function __construct(int $id_club, string $nom, string $prenom, string $mail, string $mdp, string $sexe) {
+    public function __construct(int $id_club, string $nom, string $prenom, string $mail, string $mdp, string $sexe, string $image) {
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->mail = $mail;
         $this->mdp = $mdp;
         $this->sexe = $sexe;
         $this->id_club = $id_club;
+        $this->image = $image;
     }
 
     public function getNom(): string {
@@ -62,6 +64,14 @@ class User {
 
     public function getId_club(): int{
         return $this->id_club;
+    }
+
+    public function setImage(string $image){
+        $this->image = $image;
+    }
+
+    public function getImage(){
+        return $this->image;
     }
 }
 ?>

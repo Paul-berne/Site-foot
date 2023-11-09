@@ -18,7 +18,6 @@ class Router {
     // Traite la demande actuelle
     public function execute($url) {
         if (array_key_exists($url, $this->routes)) {
-            // Si l'URL correspond à une route, incluez le fichier du contrôleur
             $controllerFile = $this->routes[$url];
             if (file_exists($controllerFile)) {
                 include_once($controllerFile);
