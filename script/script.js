@@ -20,13 +20,15 @@ function validate() {
             str.match( /[^a-zA-Z\d]/g) &&
             str.length >= 12) {
         msg = "<p style='color:green'>Mot de passe fort.</p>"; 
-        return true;
     }else{ 
         msg = "<p style='color:red'>Mot de passe faible.</p>"; 
+        }
+    document.getElementById("message_conforme").innerHTML= msg; 
+    if (msg === "<p style='color:green'>Mot de passe fort.</p>"){
+        return true;
+    }else {
         return false;
     }
-    document.getElementById("message_conforme").innerHTML= msg; 
-
 } 
 
 function same_password(){
@@ -77,4 +79,8 @@ function selectAllClubs() {
     for (var i = 0; i < clubCheckboxes.length; i++) {
         clubCheckboxes[i].checked = checkboxes[0].checked;
     }
+}
+
+function mouseon(){
+    
 }
