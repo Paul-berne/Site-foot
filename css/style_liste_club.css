@@ -1,5 +1,14 @@
+body {
+    background-image: url(../img/15518074_5594016.jpg);
+    margin-top: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 table {
-    width: 100%;
+    width: 50%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
@@ -14,10 +23,11 @@ th {
     background-color: #f2f2f2;
 }
 
+td{
+    background-color: rgb(226, 226, 226);
+}
+
 /* Style pour l'en-tête */
 h1 {
     font-size: 24px;
-}
-body{
-    margin-top: 100px;
 }
