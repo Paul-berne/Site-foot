@@ -14,7 +14,7 @@
     </header>
 
     <div class="container">
-        <h2>Bienvenue sur mon de site de football en ligue 1</h2>
+        <h2>Bienvenue sur mon site de football en ligue 1</h2>
         <p>Vous pouvez retrouver ici toute l'actualité sur la ligue 1.</p>
         <p>Explorez notre site pour trouver des informations passionnantes sur les matchs, les classements. Restez
             connectés avec le monde du football en ligue !</p>
