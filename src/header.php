@@ -3,9 +3,10 @@
     <script src="script/script.js"></script>
     <nav id="headerli">
 
-        <li><a href="/Acceuil" onmouseenter="">Acceuil</a></li>
-        <li><a href="/inscription">Inscription</a></li>
+        <li><a href="/Acceuil">Acceuil</a></li>
         <li><a href="/listedeclub">Liste des clubs</a></li>
+        <li><a href="/inscription">Inscription</a></li>
+        <li><a href="/Connexion">Connexion</a></li>
     </nav>
 </div>
 <script>

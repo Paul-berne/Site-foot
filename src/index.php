@@ -17,6 +17,7 @@
     $router->addRoute("/listedeclub", "control/C_Liste_Club.php");
     $router->addRoute("/Acceuil", "control/C_Acceuil.php");
     $router->addRoute("/", "control/C_Acceuil.php");
+    $router->addRoute("/Connexion", "control/C_Connexion.php");
 
     $currentURL = $_SERVER['REQUEST_URI'];
 

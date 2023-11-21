@@ -80,7 +80,3 @@ function selectAllClubs() {
         clubCheckboxes[i].checked = checkboxes[0].checked;
     }
 }
-
-function mouseon(){
-    
-}
