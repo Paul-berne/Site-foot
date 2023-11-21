@@ -25,12 +25,25 @@
 $dsn = 'pgsql:host=localhost;dbname=site-foot;password=Paulberne13?;user=postgres;port=5432';
 $cnx = new PDO($dsn);
 
-$article = $cnx->query("SELECT * FROM news");
+// Sélectionner les 4 articles ayant au moins 3 commentaires
+$article = $cnx->query("SELECT news.*, COUNT(commentary.id_com) AS comment_count
+                        FROM news
+                        LEFT JOIN commentary ON news.id_news = commentary.id_news
+                        GROUP BY news.id_news
+                        HAVING COUNT(commentary.id_com) >= 3
+                        LIMIT 4");
+
 foreach ($article as $row) {
     echo '<div class="article_container">';
     echo '<h2>' . $row['article_news'] . '</h2>';
 
-    $commentary = $cnx->query("SELECT * FROM commentary INNER JOIN utilisateur ON commentary.id_uti = utilisateur.id_uti WHERE id_news = " . $row['id_news'] . ";");
+    // Sélectionner les 3 premiers commentaires
+    $commentary = $cnx->query("SELECT commentary.*, utilisateur.nom_uti
+                               FROM commentary
+                               INNER JOIN utilisateur ON commentary.id_uti = utilisateur.id_uti
+                               WHERE commentary.id_news = " . $row['id_news'] . "
+                               LIMIT 3");
+
     echo '<div class="comment_container">';
     foreach ($commentary as $comment) {
         echo $comment['nom_uti'];
@@ -49,6 +62,8 @@ foreach ($article as $row) {
     echo '</div>';
 }
 ?>
+
+    ?>
 
 </body>
 

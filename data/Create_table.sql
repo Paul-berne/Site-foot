@@ -39,7 +39,8 @@ CREATE TABLE NEWS
     ID_NEWS serial NOT NULL  ,
     ID_CLUB int NOT NULL  ,
     ARTICLE_NEWS varchar NULL ,   
-	CONSTRAINT PK_NEWS PRIMARY KEY (ID_NEWS)
+    date_news DATE DEFAULT CURRENT_DATE,
+     CONSTRAINT PK_NEWS PRIMARY KEY (ID_NEWS)
    ) ;
 
 -- -----------------------------------------------------------------------------
@@ -49,6 +50,7 @@ CREATE TABLE NEWS
 CREATE TABLE commentary(
 	ID_com serial not null,
 	desc_com varchar(255),
+     Date_comment DATE DEFAULT CURRENT_DATE,
      ID_NEWS int not null,
      ID_uti int not null,
 	constraint pk_id_com primary key (id_com),
