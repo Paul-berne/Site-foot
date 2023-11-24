@@ -5,10 +5,19 @@
 
         <li><a href="/Acceuil">Acceuil</a></li>
         <li><a href="/listedeclub">Liste des clubs</a></li>
-        <li><a href="/inscription">Inscription</a></li>
-        <li><a href="/Connexion">Connexion</a></li>
+        <?php
+                session_start();
+                if(isset($_SESSION['nom'])){
+                    echo "<li>".$_SESSION['nom'].$_SESSION['prenom']. "<img src='" . $_SESSION['image'] ."' alt='User Image'></li>";
+                } else {
+                    echo '<li><a href="/inscription">Inscription</a></li>';
+                    echo '<li><a href="/Connexion">Connexion</a></li>';
+                }
+            ?>
+
     </nav>
 </div>
+
 <script>
 let lastScrollTop = 0;
 const header = document.querySelector("#headerli");

@@ -9,19 +9,25 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px;
     box-shadow: 5px 1px 15px black;
     z-index: 999;
 }
 
 #headerli a {
-    padding: 5px 20px;
     transition: background-color 0.3s, border-radius 0.3s;
 }
 
 #headerli a:hover {
     background-color: #FAE9E1;
     border-radius: 50px; /* Valeur de bordure arrondie pour créer une zone ronde */
+}
+
+#headerli li{
+    padding: 5px 20px;
+}
+#headerli img {
+    max-width: 30px; /* Ajustez la largeur maximale selon vos besoins */
+    max-height: 30px; /* Ajustez la hauteur maximale selon vos besoins */
 }
 
 .over {

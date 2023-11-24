@@ -20,6 +20,7 @@
             connectés avec le monde du football en ligue !</p>
         <a href="/inscription" class="btn">S'inscrire</a>
         <a href="/listedeclub" class="btn">Liste des clubs</a>
+
     </div>
     <?php
 $dsn = 'pgsql:host=localhost;dbname=site-foot;password=Paulberne13?;user=postgres;port=5432';
@@ -31,17 +32,18 @@ $article = $cnx->query("SELECT news.*, COUNT(commentary.id_com) AS comment_count
                         LEFT JOIN commentary ON news.id_news = commentary.id_news
                         GROUP BY news.id_news
                         HAVING COUNT(commentary.id_com) >= 3
+                        ORDER BY news.date_news DESC
                         LIMIT 4");
 
 foreach ($article as $row) {
     echo '<div class="article_container">';
     echo '<h2>' . $row['article_news'] . '</h2>';
 
-    // Sélectionner les 3 premiers commentaires
-    $commentary = $cnx->query("SELECT commentary.*, utilisateur.nom_uti
+$commentary = $cnx->query("SELECT commentary.*, utilisateur.nom_uti
                                FROM commentary
                                INNER JOIN utilisateur ON commentary.id_uti = utilisateur.id_uti
                                WHERE commentary.id_news = " . $row['id_news'] . "
+                               ORDER BY commentary.date_comment DESC
                                LIMIT 3");
 
     echo '<div class="comment_container">';
@@ -61,9 +63,8 @@ foreach ($article as $row) {
 
     echo '</div>';
 }
-?>
 
-    ?>
+?>
 
 </body>
 

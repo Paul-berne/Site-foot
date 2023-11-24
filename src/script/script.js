@@ -8,6 +8,7 @@ function checked_form(event) {
         message_formulaire_false.innerHTML = "Vous avez mal informé les informations dans le formulaire !";
         event.preventDefault();
     }
+    
 }
 
 function validate() { 

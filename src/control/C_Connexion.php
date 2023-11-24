@@ -9,14 +9,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail = $_POST['mail'];
     $password = md5($_POST['password']);
 
-    // Utilisation de requêtes préparées pour éviter l'injection SQL
-    $stmt = $cnx->prepare("SELECT * FROM utilisateur WHERE mail_uti = :mail AND password_uti = :password");
-    $stmt->execute(['mail' => $mail, 'password' => $password]);
+    $stmt = $cnx->query("SELECT * FROM utilisateur WHERE mail_uti = '$mail' AND password_uti = '$password'");
 
-    if ($stmt->rowCount() > 0) {
+    
+    if ($stmt->rowCount() == 1) {
+        session_start();
+        foreach ($stmt as $row) {
+            $imagePath = $row['image_uti'];
+            $_SESSION['image'] = $row["image_uti"];
+            $_SESSION['nom'] = $row['nom_uti'];
+            $_SESSION['prenom'] = $row['prenom_uti'];
+        }
         echo 'Connexion réussie !';
     } else {
         echo 'Identifiants incorrects. Veuillez réessayer.';
     }
+    
 }
 ?>
