@@ -13,12 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     
     if ($stmt->rowCount() == 1) {
-        session_start();
         foreach ($stmt as $row) {
             $imagePath = $row['image_uti'];
             $_SESSION['image'] = $row["image_uti"];
             $_SESSION['nom'] = $row['nom_uti'];
             $_SESSION['prenom'] = $row['prenom_uti'];
+            $_SESSION['id'] = $row['id_uti'];
         }
         echo 'Connexion réussie !';
     } else {
