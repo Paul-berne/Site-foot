@@ -19,15 +19,15 @@
 
 #headerli a:hover {
     background-color: #FAE9E1;
-    border-radius: 50px; /* Valeur de bordure arrondie pour créer une zone ronde */
+    border-radius: 50px; 
 }
 
 #headerli li{
-    padding: 5px 20px;
+    padding: 20px 20px;
 }
 #headerli img {
-    max-width: 30px; /* Ajustez la largeur maximale selon vos besoins */
-    max-height: 30px; /* Ajustez la hauteur maximale selon vos besoins */
+    max-width: 30px;
+    max-height: 30px;
 }
 
 .over {

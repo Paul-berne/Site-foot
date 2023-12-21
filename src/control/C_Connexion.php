@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['prenom'] = $row['prenom_uti'];
             $_SESSION['id'] = $row['id_uti'];
         }
-        echo 'Connexion réussie !';
+        header("Location: Connexion.php");
     } else {
         echo 'Identifiants incorrects. Veuillez réessayer.';
     }
