@@ -184,6 +184,32 @@ VALUES
     ('Merci pour les mises à jour fréquentes.', 3, 1),
     ('Je suis impatient de participer à ces événements!', 3, 1);
 
+DROP FUNCTION if exists list_commentary(integer);
+CREATE OR REPLACE FUNCTION List_Commentary(p_id_news INT)
+RETURNS TABLE (
+    id_com INT,
+    id_news INT,
+    id_uti INT,
+    date_comment DATE,
+    desc_com VARCHAR(255),
+    nom_uti VARCHAR(255)
+) AS $$
+BEGIN
+    RETURN QUERY 
+        SELECT
+            commentary.id_com,
+            commentary.id_news,
+            commentary.id_uti,
+            commentary.date_comment,
+            commentary.desc_com,
+            utilisateur.nom_uti
+        FROM commentary
+        INNER JOIN utilisateur ON commentary.id_uti = utilisateur.id_uti
+        WHERE commentary.id_news = p_id_news
+        ORDER BY commentary.date_comment DESC
+        LIMIT 3;
+END;
+$$ LANGUAGE plpgsql;
 
 -- -----------------------------------------------------------------------------
 --                FIN DE GENERATION

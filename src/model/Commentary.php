@@ -1,22 +1,22 @@
 <?php
 
 class Commentary {
-    private $leArticle;
+    private $id_news;
     private $desc_com;
     private $id_uti;
 
-    public function __construct($leArticle, $desc_com, $id_uti) {
-        $this->leArticle = $leArticle;
+    public function __construct($id_news, $desc_com, $id_uti) {
+        $this->id_news = $id_news;
         $this->desc_com = $desc_com;
         $this->id_uti = $id_uti;
     }
 
-    public function getleArticle() {
-        return $this->leArticle;
+    public function getid_news() {
+        return $this->id_news;
     }
 
-    public function setleArticle($leArticle) {
-        $this->leArticle = $leArticle;
+    public function setid_news($id_news) {
+        $this->id_news = $id_news;
     }
 
     public function getDescCom() {
