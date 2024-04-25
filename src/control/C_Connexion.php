@@ -2,7 +2,7 @@
 include_once("header.php");
 include_once("./view/V_Connexion.php");
 
-$dsn = 'pgsql:host=localhost;dbname=site-foot;password=Paulberne13?;user=postgres;port=5432';
+$dsn ='pgsql:host=192.168.30.110;dbname=Ligue_1;password=P@ssw0rdsio;user=postgres;port=9876';
 $cnx = new PDO($dsn);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
