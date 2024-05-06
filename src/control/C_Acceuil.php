@@ -13,7 +13,7 @@
     include_once("header.php");
     include_once("./view/V_Acceuil.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $dsn ='pgsql:host=192.168.30.110;dbname=Ligue_1;password=P@ssw0rdsio;user=postgres;port=9876';
+    $dsn ='pgsql:host=localhost;dbname=Ligue_1_backup;password=Paulberne13?;user=postgres;port=5432';
     $cnx = new PDO($dsn);
 
     if(isset($_SESSION['nom'])){
