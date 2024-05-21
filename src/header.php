@@ -4,7 +4,7 @@
     <nav id="headerli">
 
         <li><a href="/Acceuil">Acceuil</a></li>
-        <li><a href="/listedeclub">Liste des clubs</a></li>
+        <li><a href="/Classement">Liste des clubs</a></li>
         <?php
                 session_start();
                 if(isset($_SESSION['nom'])){

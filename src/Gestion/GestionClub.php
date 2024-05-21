@@ -6,9 +6,6 @@ class GestionClub{
         $this->cnx = $cnx;
     }
     function getListeClub(): array {
-        $dsn ='pgsql:host=localhost;dbname=Ligue_1_backup;password=Paulberne13?;user=postgres;port=5432';
-        $cnx = new PDO($dsn);
-        
         $res = $this->cnx->query("select club.id_club, nom_club, championnat.nom from saison
         inner join club on saison.id_club = club.id_club
             inner join championnat on saison.id_championnat = championnat.id_championnat");

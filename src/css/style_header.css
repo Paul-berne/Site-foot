@@ -3,31 +3,41 @@
     position: fixed;
     display: flex;
     justify-content: space-around;
+    align-items: center; /* Centrer les éléments verticalement */
     list-style: none;
-    background-color: aliceblue;
+    background-color: #f0f8ff; /* Utiliser un nom de couleur plus descriptif */
     font-size: 1.1em;
     top: 0;
     left: 0;
     width: 100%;
-    box-shadow: 5px 1px 15px black;
+    padding: 10px 0; /* Ajouter un padding pour donner de l'espace vertical */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adoucir l'ombre */
     z-index: 999;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Ajouter des transitions */
 }
 
 #headerli a {
+    text-decoration: none; /* Supprimer la décoration de texte */
+    color: inherit; /* Conserver la couleur du texte par défaut */
+    padding: 10px 20px; /* Ajouter un padding pour agrandir la zone cliquable */
     transition: background-color 0.3s, border-radius 0.3s;
 }
 
 #headerli a:hover {
-    background-color: #FAE9E1;
-    border-radius: 50px; 
+    background-color: #fae9e1;
+    border-radius: 50px;
 }
 
-#headerli li{
-    padding: 20px 20px;
+#headerli li {
+    padding: 0 20px; /* Ajuster le padding horizontal */
+    display: flex;
+    align-items: center; /* Centrer les éléments verticalement */
 }
+
 #headerli img {
     max-width: 30px;
     max-height: 30px;
+    margin-right: 10px; /* Ajouter un espace entre l'image et le texte */
 }
 
 .over {

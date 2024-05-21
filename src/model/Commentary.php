@@ -1,39 +1,50 @@
 <?php
-
 class Commentary {
-    private $id_news;
-    private $desc_com;
-    private $id_uti;
+    private int $id_news;
+    private String $id_uti;
+    private string $desc_commentary;
+    private DateTime $date;
 
-    public function __construct($id_news, $desc_com, $id_uti) {
+    // Constructeur
+    public function __construct(int $id_news, String $id_uti, string $desc_commentary, DateTime $date) {
         $this->id_news = $id_news;
-        $this->desc_com = $desc_com;
         $this->id_uti = $id_uti;
+        $this->desc_commentary = $desc_commentary;
+        $this->date = $date;
     }
 
-    public function getid_news() {
+    // Getters
+    public function getIdNews(): int {
         return $this->id_news;
     }
 
-    public function setid_news($id_news) {
-        $this->id_news = $id_news;
-    }
-
-    public function getDescCom() {
-        return $this->desc_com;
-    }
-
-    public function setDescCom($desc_com) {
-        $this->desc_com = $desc_com;
-    }
-
-    public function getIdUti() {
+    public function getIdUti(): String {
         return $this->id_uti;
     }
 
-    public function setIdUti($id_uti) {
+    public function getDescCommentary(): string {
+        return $this->desc_commentary;
+    }
+
+    public function getDate(): DateTime {
+        return $this->date;
+    }
+
+    // Setters
+    public function setIdNews(int $id_news): void {
+        $this->id_news = $id_news;
+    }
+
+    public function setIdUti(String $id_uti): void {
         $this->id_uti = $id_uti;
     }
-}
 
+    public function setDescCommentary(string $desc_commentary): void {
+        $this->desc_commentary = $desc_commentary;
+    }
+
+    public function setDate(DateTime $date): void {
+        $this->date = $date;
+    }
+}
 ?>

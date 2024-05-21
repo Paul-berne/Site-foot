@@ -14,7 +14,7 @@
     include_once("router.php");
     $router = new Router(); 
     $router->addRoute("/inscription", "control/C_Inscription.php"); 
-    $router->addRoute("/listedeclub", "control/C_Liste_Club.php");
+    $router->addRoute("/Classement", "control/C_Classement_Saison.php");
     $router->addRoute("/Acceuil", "control/C_Acceuil.php");
     $router->addRoute("/", "control/C_Acceuil.php");
     $router->addRoute("/Connexion", "control/C_Connexion.php");

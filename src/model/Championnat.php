@@ -1,97 +1,116 @@
 <?php
-class Championnat{
-    private int $id_club;
-    private int $id_championnat;
-    private int $annee;
-    private int $nombre_but_marque;
-    private int $nombre_but_encaisse;
-    private int $nombre_point;
-    private int $gagner;
-    private int $perdus;
-    private int $nul;
 
-    public function __construct(int $id_club, int $id_championnat, int $annee, int $nombre_but_marque, int $nombre_but_encaisse, int $nombre_point, int $gagner, int $perdus, int $nul) {
-        $this->id_club = $id_club;
-        $this->id_championnat = $id_championnat;
-        $this->annee = $annee;
-        $this->nombre_but_marque = $nombre_but_marque;
-        $this->nombre_but_encaisse = $nombre_but_encaisse;
-        $this->nombre_point = $nombre_point;
-        $this->gagner = $gagner;
-        $this->perdus = $perdus;
-        $this->nul = $nul;
+class Championnat
+{
+    private string $nom_club;
+    private int $matchs_gagnes;
+    private int $matchs_perdus;
+    private int $matchs_nuls;
+    private int $buts_marques;
+    private int $buts_encaissees;
+    private int $difference_buts;
+    private int $nb_points;
+    private string $logo_club;
+
+    public function __construct(string $nom_club,int $matchs_gagnes,int $matchs_perdus,int $matchs_nuls,int $buts_marques,int $buts_encaissees,int $difference_buts,int $nb_points,string $logo_club) {
+        $this->nom_club = $nom_club;
+        $this->matchs_gagnes = $matchs_gagnes;
+        $this->matchs_perdus = $matchs_perdus;
+        $this->matchs_nuls = $matchs_nuls;
+        $this->buts_marques = $buts_marques;
+        $this->buts_encaissees = $buts_encaissees;
+        $this->difference_buts = $difference_buts;
+        $this->nb_points = $nb_points;
+        $this->logo_club = $logo_club;
     }
 
-    public function getIdClub(): int {
-        return $this->id_club;
+    public function getNomClub(): string
+    {
+        return $this->nom_club;
     }
 
-    public function setIdClub(int $id_club): void {
-        $this->id_club = $id_club;
+    public function setNomClub(string $nom_club): void
+    {
+        $this->nom_club = $nom_club;
     }
 
-    public function getIdChampionnat(): int {
-        return $this->id_championnat;
+    public function getMatchsGagnes(): int
+    {
+        return $this->matchs_gagnes;
     }
 
-    public function setIdChampionnat(int $id_championnat): void {
-        $this->id_championnat = $id_championnat;
+    public function setMatchsGagnes(int $matchs_gagnes): void
+    {
+        $this->matchs_gagnes = $matchs_gagnes;
     }
 
-    public function getAnnee(): int {
-        return $this->annee;
+    public function getMatchsPerdus(): int
+    {
+        return $this->matchs_perdus;
     }
 
-    public function setAnnee(int $annee): void {
-        $this->annee = $annee;
+    public function setMatchsPerdus(int $matchs_perdus): void
+    {
+        $this->matchs_perdus = $matchs_perdus;
     }
 
-    public function getNombreButMarque(): int {
-        return $this->nombre_but_marque;
+    public function getMatchsNuls(): int
+    {
+        return $this->matchs_nuls;
     }
 
-    public function setNombreButMarque(int $nombre_but_marque): void {
-        $this->nombre_but_marque = $nombre_but_marque;
+    public function setMatchsNuls(int $matchs_nuls): void
+    {
+        $this->matchs_nuls = $matchs_nuls;
     }
 
-    public function getNombreButEncaisse(): int {
-        return $this->nombre_but_encaisse;
+    public function getButsMarques(): int
+    {
+        return $this->buts_marques;
     }
 
-    public function setNombreButEncaisse(int $nombre_but_encaisse): void {
-        $this->nombre_but_encaisse = $nombre_but_encaisse;
+    public function setButsMarques(int $buts_marques): void
+    {
+        $this->buts_marques = $buts_marques;
     }
 
-    public function getNombrePoint(): int {
-        return $this->nombre_point;
+    public function getButsEncaissees(): int
+    {
+        return $this->buts_encaissees;
     }
 
-    public function setNombrePoint(int $nombre_point): void {
-        $this->nombre_point = $nombre_point;
+    public function setButsEncaissees(int $buts_encaissees): void
+    {
+        $this->buts_encaissees = $buts_encaissees;
     }
 
-    public function getGagner(): int {
-        return $this->gagner;
+    public function getDifferenceButs(): int
+    {
+        return $this->difference_buts;
     }
 
-    public function setGagner(int $gagner): void {
-        $this->gagner = $gagner;
+    public function setDifferenceButs(int $difference_buts): void
+    {
+        $this->difference_buts = $difference_buts;
     }
 
-    public function getPerdus(): int {
-        return $this->perdus;
+    public function getNbPoints(): int
+    {
+        return $this->nb_points;
     }
 
-    public function setPerdus(int $perdus): void {
-        $this->perdus = $perdus;
+    public function setNbPoints(int $nb_points): void
+    {
+        $this->nb_points = $nb_points;
     }
 
-    public function getNul(): int {
-        return $this->nul;
+    public function getLogoClub(): string
+    {
+        return $this->logo_club;
     }
 
-    public function setNul(int $nul): void {
-        $this->nul = $nul;
+    public function setLogoClub(string $logo_club): void
+    {
+        $this->logo_club = $logo_club;
     }
 }
-?>

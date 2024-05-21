@@ -22,11 +22,9 @@ class Router {
             if (file_exists($controllerFile)) {
                 include_once($controllerFile);
             } else {
-                // Gérer les erreurs si le fichier du contrôleur n'existe pas
                 echo "Erreur : Contrôleur non trouvé";
             }
         } else {
-            // Gérer les erreurs 404 si l'URL n'est pas trouvée
             echo "Page non trouvée (Erreur 404)";
         }
     }

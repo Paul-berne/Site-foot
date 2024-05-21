@@ -15,9 +15,9 @@
 
     <?php
 include("./model/User.php");
-include("./model/GestionUser.php");
+include("./Gestion/GestionUser.php");
 include("./model/Club.php");
-include("./model/GestionClub.php");
+include("./Gestion/GestionClub.php");
 include_once("header.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

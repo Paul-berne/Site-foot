@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - Mon Site de Football en Ligue</title>
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -17,56 +17,35 @@
         <h2>Bienvenue sur mon site de football en ligue 1</h2>
         <p>Vous pouvez retrouver ici toute l'actualité sur la ligue 1.</p>
         <p>Explorez notre site pour trouver des informations passionnantes sur les matchs, les classements. Restez
-            connectés avec le monde du football en ligue !</p>
+            connectés avec le monde du football en ligue 1!</p>
         <a href="/inscription" class="btn">S'inscrire</a>
-        <a href="/listedeclub" class="btn">Liste des clubs</a>
-
+        <a href="/listedeclub" class="btn">Classements</a>
     </div>
-    <?php
-    $dsn = 'pgsql:host=localhost;dbname=Ligue_1_backup;password=Paulberne13?;user=postgres;port=5432';
-    $cnx = new PDO($dsn);
 
-    // Sélectionner les 4 articles ayant au moins 3 commentaires
-    $article = $cnx->query("SELECT news.*, COUNT(commentaire.id_commentaire) AS comment_count
-FROM news
-LEFT JOIN commentaire ON news.id_news = commentaire.id_news
-GROUP BY news.id_news
-HAVING COUNT(commentaire.id_commentaire) >= 3
-ORDER BY news.date_news DESC
-LIMIT 4");
-echo '<section class = "section_article">';
-    foreach ($article as $row) {
-        echo '<div class="article_container">';
-        echo '<h2>' . $row['title_news'] . '</h2>';
-        echo '<p>' . $row['article_news'] . '</p>';
+    <section class="section_article">
+        <?php foreach ($article as $row): ?>
+        <div class="article_container">
+            <h2><?= $row->getTitle() ?></h2>
+            <p><?= $row->getDescNews() ?></p>
 
-        $commentary = $cnx->query("SELECT commentaire.*, utilisateur.nom_uti
-        FROM commentaire
-        INNER JOIN utilisateur ON commentaire.id_uti = utilisateur.id_uti
-        WHERE commentaire.id_news = ". $row['id_news'] ."
-        ORDER BY commentaire.date_publication DESC
-        LIMIT 3");
+            <div class="comment_container">
+                <?php foreach ($row->getArrayCommentary() as $comment): ?>
+                <div class="comment">
+                    <strong><?= $comment->getIdUti() ?>:</strong>
+                    <?= $comment->getDescCommentary() ?><br>
+                </div>
+                <?php endforeach; ?>
+            </div>
 
-        echo '<div class="comment_container">';
-        foreach ($commentary as $comment) {
-            echo $comment['nom_uti'];
-            echo '<div class="comment">' . $comment['str_commentaire'] . '</div><br>';
-        }
-
-        echo '</div>';
-
-        echo '<form action="Acceuil" method="post">';
-        echo '<input type="hidden" name="id_news" value="' . $row['id_news'] . '">';
-        echo '<label for="nouveau_commentaire">Ajouter un commentaire :</label><br>';
-        echo '<textarea name="nouveau_commentaire" id="nouveau_commentaire" rows="3" required></textarea>';
-        echo '<input type="submit" value="Ajouter commentaire">';
-        echo '</form>';
-
-        echo '</div>';
-    }
-    echo '</section>'
-    ?>
-
+            <form action="Acceuil" method="post">
+                <input type="hidden" name="id_news" value="<?= $row->getIdNews() ?>">
+                <label for="nouveau_commentaire">Ajouter un commentaire :</label><br>
+                <textarea name="nouveau_commentaire" id="nouveau_commentaire" rows="3" required></textarea>
+                <input type="submit" value="Ajouter commentaire">
+            </form>
+        </div>
+        <?php endforeach; ?>
+    </section>
 </body>
 
 </html>
