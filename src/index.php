@@ -11,13 +11,14 @@
 <body>
 
     <?php
-    include_once("router.php");
-    $router = new Router(); 
-    $router->addRoute("/inscription", "control/C_Inscription.php"); 
+    include_once ("router.php");
+    $router = new Router();
+    $router->addRoute("/inscription", "control/C_Inscription.php");
     $router->addRoute("/Classement", "control/C_Classement_Saison.php");
     $router->addRoute("/Acceuil", "control/C_Acceuil.php");
     $router->addRoute("/", "control/C_Acceuil.php");
     $router->addRoute("/Connexion", "control/C_Connexion.php");
+    $router->addRoute("/Profil", "control/C_Profil.php");
 
     $currentURL = $_SERVER['REQUEST_URI'];
 

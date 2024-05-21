@@ -52,4 +52,15 @@ LIMIT 4");
         }
         return $LesCommentaires;
     }
+
+    function InsertCommentary(string $str_commentaire, int $id_uti, int $id_news)
+    {
+        $actual_date = date('Y-m-d');
+        $insert = $this->cnx->prepare("INSERT INTO COMMENTAIRE(str_commentaire, date_publication,id_uti, id_news) values (:str_commentaire, :date,:id_uti, :id_news)");
+        $insert->bindParam(":str_commentaire", $str_commentaire, PDO::PARAM_STR);
+        $insert->bindParam(':id_uti', $id_uti, PDO::PARAM_INT);
+        $insert->bindParam(':id_news', $id_news, PDO::PARAM_INT);
+        $insert->bindParam(':date', $actual_date, PDO::PARAM_STR);
+        $insert->execute();
+    }
 }

@@ -12,11 +12,12 @@
     <div class="container">
         <h2>Connexion</h2>
         <form action="Connexion" method="post">
+            <div id="error-message" class="error"></div>
             <label for="mail">Adresse Mail :</label>
-            <input type="email" name="mail" required>
+            <input type="email" name="mail" required oninput="script_balise(this)">
 
             <label for="password">Mot de passe :</label>
-            <input type="password" name="password" required>
+            <input type="password" name="password" required oninput="script_balise(this)">
 
             <button type="submit">Se connecter</button>
         </form>

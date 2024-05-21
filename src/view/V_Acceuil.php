@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Mon Site de Football en Ligue</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Accueil</title>
 </head>
 
 <body>
@@ -21,6 +20,7 @@
         <a href="/inscription" class="btn">S'inscrire</a>
         <a href="/listedeclub" class="btn">Classements</a>
     </div>
+    <p class="Section_title">Les Derniers articles de la ligue 1 !</p>
 
     <section class="section_article">
         <?php foreach ($article as $row): ?>
@@ -28,6 +28,7 @@
             <h2><?= $row->getTitle() ?></h2>
             <p><?= $row->getDescNews() ?></p>
 
+            <p class="section_commentaire">Les commentaires :</p>
             <div class="comment_container">
                 <?php foreach ($row->getArrayCommentary() as $comment): ?>
                 <div class="comment">
@@ -37,11 +38,12 @@
                 <?php endforeach; ?>
             </div>
 
-            <form action="Acceuil" method="post">
+            <form action="Acceuil" method="post" id="post_commentaire">
                 <input type="hidden" name="id_news" value="<?= $row->getIdNews() ?>">
                 <label for="nouveau_commentaire">Ajouter un commentaire :</label><br>
                 <textarea name="nouveau_commentaire" id="nouveau_commentaire" rows="3" required></textarea>
-                <input type="submit" value="Ajouter commentaire">
+                <input type="submit" value="Ajouter commentaire" onclick="checked_script_injection(event)">
+                <p id="message_non_valide" style="color: red;"></p>
             </form>
         </div>
         <?php endforeach; ?>
