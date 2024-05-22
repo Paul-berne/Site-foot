@@ -14,14 +14,14 @@
     include_once ("./model/Article.php");
     include_once ("./model/Commentary.php");
     include_once ("./Gestion/Gestion_Article_Commentary.php");
-    $dsn = 'pgsql:host=localhost;dbname=Ligue_1_backup;password=Paulberne13?;user=postgres;port=5432';
+    $dsn = 'pgsql:host=localhost;dbname=Ligue_1_backup;password=P@ssw0rdsio;user=postgres;port=5432';
     $cnx = new PDO($dsn);
     $GestionArticle = new GestionArticle($cnx);
     $article = [];
     $article = $GestionArticle->GetListeArticle();
     include_once ("./view/V_Acceuil.php");
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $dsn = 'pgsql:host=localhost;dbname=Ligue_1_backup;password=Paulberne13?;user=postgres;port=5432';
+        $dsn = 'pgsql:host=localhost;dbname=Ligue_1_backup;password=P@ssw0rdsio;user=postgres;port=5432';
         $cnx = new PDO($dsn);
 
         if (isset($_SESSION['nom'])) {

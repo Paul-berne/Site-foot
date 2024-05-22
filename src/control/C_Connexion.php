@@ -6,7 +6,7 @@ if (isset($_SESSION['user'])) {
     header("Location: Acceuil");
     exit();
 } else {
-    $dsn = 'pgsql:host=localhost;dbname=Ligue_1_backup;password=Paulberne13?;user=postgres;port=5432';
+    $dsn = 'pgsql:host=localhost;dbname=Ligue_1_backup;password=P@ssw0rdsio;user=postgres;port=5432';
     $cnx = new PDO($dsn);
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
